@@ -60,7 +60,7 @@ def eval_fn(data_loader, model, device, tokenizer=TOKENIZER):
                     idx2 = jj
 
         this_id = this_id[idx1: idx2+1]
-        predicted_text = tokenizer.decode(this_id)
+        predicted_text = tokenizer.decode(this_id, skip_special_tokens=True)
         predicted_text = predicted_text.strip()
         sel_text = orig_selected[i].strip()
 
